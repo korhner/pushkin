@@ -12,3 +12,4 @@ script: python -c 'import pushkin; pushkin.run_tests()'
 branches:
   only:
     - travis-ci
+    - master
