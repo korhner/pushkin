@@ -8,6 +8,7 @@ before_script:
   - psql -U postgres -c "CREATE DATABASE pushkin WITH OWNER pushkin"
   - psql -U postgres -d pushkin -c "CREATE EXTENSION HSTORE"
 install: 
+  - pip install pytest==2.9.2
   - pip install setuptools==25.1.2
   - python setup.py install
 script: python -c 'import pushkin; pushkin.run_tests()'
