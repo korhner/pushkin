@@ -1,7 +1,5 @@
-### Status
-[![Build Status](https://travis-ci.org/korhner/pushkin.svg?branch=travis-ci)](https://travis-ci.org/korhner/pushkin)
-
 # Pushkin
+[![Build Status](https://travis-ci.org/korhner/pushkin.svg?branch=travis-ci)](https://travis-ci.org/korhner/pushkin)
 
 ## Introduction
 
