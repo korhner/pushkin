@@ -37,6 +37,8 @@ def init(configuration_file):
     global db_name
     global db_user
     global db_pass
+    global db_host
+    global db_port
     global db_pool_size
     global max_devices_per_user
     global sqlalchemy_url
@@ -112,8 +114,10 @@ def init(configuration_file):
     db_pass = config.get(DATABASE_CONFIG_SECTION, 'db_pass')
     db_pool_size = int(config.get(DATABASE_CONFIG_SECTION, 'db_pool_size'))
     max_devices_per_user = int(config.get(DATABASE_CONFIG_SECTION, 'max_devices_per_user'))
-    sqlalchemy_url = 'postgresql+psycopg2://{db_user}:{db_pass}@localhost:5432/{db_name}'.\
-        format(db_user=db_user, db_pass=db_pass, db_name=db_name)
+    db_host = config.get(DATABASE_CONFIG_SECTION, 'db_host')
+    db_port = config.get(DATABASE_CONFIG_SECTION, 'db_port')
+    sqlalchemy_url = 'postgresql+psycopg2://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}'.\
+        format(db_user=db_user, db_pass=db_pass, db_name=db_name, db_host=db_host, db_port=db_port)
 
     #Handler URLs
     proto_event_handler_url = config.get(REQUEST_HANDLER_SECTION, 'proto_event_handler_url')
